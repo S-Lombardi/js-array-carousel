@@ -37,15 +37,19 @@ let allBoxImg = document.getElementsByClassName("box-img");
 //variabile per indice immagine
 let indiceImmagine = 0;
 
-
 //pulsante Up
 buttonUp.addEventListener("click", function(){
 
-    if(indiceImmagine < allBoxImg.length - 1) {
+    if(indiceImmagine < allBoxImg.length -1 ){
         allBoxImg[indiceImmagine].classList.remove("block");
 
-        indiceImmagine = indiceImmagine + 1;
+        indiceImmagine = indiceImmagine +1 ;
 
+        allBoxImg[indiceImmagine].classList.add("block");
+    }
+    else{
+        allBoxImg[indiceImmagine].classList.remove("block");
+        indiceImmagine = 0;
         allBoxImg[indiceImmagine].classList.add("block");
     }
 
@@ -56,10 +60,12 @@ buttonDown.addEventListener("click", function(){
 
     if(indiceImmagine > 0) {
         allBoxImg[indiceImmagine].classList.remove("block");
-
         indiceImmagine = indiceImmagine - 1;
-
         allBoxImg[indiceImmagine].classList.add("block");
     }
-
+    else{
+        allBoxImg[indiceImmagine].classList.remove("block");
+        indiceImmagine = allBoxImg.length -1;
+        allBoxImg[indiceImmagine].classList.add("block");
+    }
 });
