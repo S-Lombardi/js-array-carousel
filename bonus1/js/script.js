@@ -40,6 +40,20 @@ let indiceImmagine = 0;
 //pulsante Up
 buttonUp.addEventListener("click", function(){
 
+    if(indiceImmagine > 0) {
+        allBoxImg[indiceImmagine].classList.remove("block");
+        indiceImmagine = indiceImmagine - 1;
+        allBoxImg[indiceImmagine].classList.add("block");
+    }
+    else{
+        allBoxImg[indiceImmagine].classList.remove("block");
+        indiceImmagine = allBoxImg.length -1;
+        allBoxImg[indiceImmagine].classList.add("block");
+    }
+});
+//pulsante Down
+buttonDown.addEventListener("click", function(){
+
     if(indiceImmagine < allBoxImg.length -1 ){
         allBoxImg[indiceImmagine].classList.remove("block");
 
@@ -53,19 +67,4 @@ buttonUp.addEventListener("click", function(){
         allBoxImg[indiceImmagine].classList.add("block");
     }
 
-});
-
-//pulsante Down
-buttonDown.addEventListener("click", function(){
-
-    if(indiceImmagine > 0) {
-        allBoxImg[indiceImmagine].classList.remove("block");
-        indiceImmagine = indiceImmagine - 1;
-        allBoxImg[indiceImmagine].classList.add("block");
-    }
-    else{
-        allBoxImg[indiceImmagine].classList.remove("block");
-        indiceImmagine = allBoxImg.length -1;
-        allBoxImg[indiceImmagine].classList.add("block");
-    }
 });
